@@ -1,3 +1,13 @@
+function filter(){
+	var filterData = $('#filter_data').val();
+	var url = window.location.href;
+	var index = url.indexOf('?');
+	var params = $.param( { filterData: filterData } );
+	if(index != -1) url = url.substring(0, index);
+	url += "?" + params
+	window.location.href = url;
+}
+
 function getParameterByName(name) {
 	/* function that get parameter from url */
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
